@@ -1,0 +1,26 @@
+{
+    "name": "flax",
+    "displayName": "flax-language",
+    "description": "Syntax definition for the Flax language",
+    "version": "0.0.1",
+    "publisher": "zhiayang",
+    "engines": {
+        "vscode": "^1.16.0"
+    },
+    "categories": [
+        "Languages"
+    ],
+    "contributes": {
+        "languages": [{
+            "id": "flax",
+            "aliases": ["Flax", "flax"],
+            "extensions": [".flx"],
+            "configuration": "./language-configuration.json"
+        }],
+        "grammars": [{
+            "language": "flax",
+            "scopeName": "source.flax",
+            "path": "./syntaxes/flax.tmLanguage"
+        }]
+    }
+}
