@@ -1,5 +1,5 @@
-export bar
-import "foo" as bar
+export b
+import "foo" as a
 
 @entry fn main()
 {

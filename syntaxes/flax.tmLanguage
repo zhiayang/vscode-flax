@@ -538,7 +538,7 @@
 			<key>comment</key>
 			<string>import-declaration</string>
 			<key>match</key>
-			<string>\b(import\s+)(".+")\s+((as\s+)([_a-zA-Z][_a-zA-Z0-9]+))?</string>
+			<string>\b(import\s+)(".+")\s+((as\s+)([_a-zA-Z][_a-zA-Z0-9]*))?</string>
 			<key>name</key>
 			<string>meta.import.flax</string>
 		</dict>
@@ -560,7 +560,7 @@
 			<key>comment</key>
 			<string>export-declaration</string>
 			<key>match</key>
-			<string>\b(export\s+)([_a-zA-Z][_a-zA-Z0-9]+)\b</string>
+			<string>\b(export\s+)([_a-zA-Z][_a-zA-Z0-9]*)</string>
 			<key>name</key>
 			<string>meta.export.flax</string>
 		</dict>
