@@ -298,6 +298,10 @@
 					<key>include</key>
 					<string>#function-declaration</string>
 				</dict>
+				<dict>
+					<key>include</key>
+					<string>#export-declaration</string>
+				</dict>
 			</array>
 		</dict>
 		<key>declaration-specifier</key>
@@ -518,20 +522,47 @@
 				<key>2</key>
 				<dict>
 					<key>name</key>
-					<string>storage.modifier.flax</string>
+					<string>string.quoted.double.flax</string>
 				</dict>
-				<key>3</key>
+				<key>4</key>
 				<dict>
 					<key>name</key>
-					<string>support.type.module.import.flax</string>
+					<string>keyword.other.statement.flax</string>
+				</dict>
+				<key>5</key>
+				<dict>
+					<key>name</key>
+					<string>storage.modifier.flax</string>
 				</dict>
 			</dict>
 			<key>comment</key>
 			<string>import-declaration</string>
 			<key>match</key>
-			<string>\b(import(\s+)(".+")(\s?)((as)(\s+)([_a-zA-Z][_a-zA-Z0-9]+))?)|(export(\s+)([_a-zA-Z][_a-zA-Z0-9]+))\b</string>
+			<string>\b(import\s+)(".+")\s+((as\s+)([_a-zA-Z][_a-zA-Z0-9]+))?</string>
 			<key>name</key>
 			<string>meta.import.flax</string>
+		</dict>
+		<key>export-declaration</key>
+		<dict>
+			<key>captures</key>
+			<dict>
+				<key>1</key>
+				<dict>
+					<key>name</key>
+					<string>keyword.other.import.flax</string>
+				</dict>
+				<key>2</key>
+				<dict>
+					<key>name</key>
+					<string>storage.modifier.flax</string>
+				</dict>
+			</dict>
+			<key>comment</key>
+			<string>export-declaration</string>
+			<key>match</key>
+			<string>\b(export\s+)([_a-zA-Z][_a-zA-Z0-9]+)\b</string>
+			<key>name</key>
+			<string>meta.export.flax</string>
 		</dict>
 		<key>in-line-comment</key>
 		<dict>

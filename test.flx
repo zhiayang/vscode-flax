@@ -1,0 +1,17 @@
+export bar
+import "foo" as bar
+
+@entry fn main()
+{
+	do {
+		union option<T>
+		{
+			some: T
+			none
+		}
+
+		let x = option<T: str>.some("300")
+
+		printf("x = %s\n", x as option<T: int>.some)
+	}
+}
