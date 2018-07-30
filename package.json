@@ -2,7 +2,7 @@
     "name": "flax",
     "displayName": "flax-language",
     "description": "Syntax definition for the Flax language",
-    "version": "0.1.1",
+    "version": "0.1.2",
     "publisher": "zhiayang",
     "engines": {
         "vscode": "^1.16.0"
@@ -15,16 +15,25 @@
         "Programming Languages"
     ],
     "contributes": {
-        "languages": [{
-            "id": "flax",
-            "aliases": ["Flax", "flax"],
-            "extensions": [".flx"],
-            "configuration": "./language-configuration.json"
-        }],
-        "grammars": [{
-            "language": "flax",
-            "scopeName": "source.flax",
-            "path": "./syntaxes/flax.tmLanguage"
-        }]
+        "languages": [
+            {
+                "id": "flax",
+                "aliases": [
+                    "Flax",
+                    "flax"
+                ],
+                "extensions": [
+                    ".flx"
+                ],
+                "configuration": "./language-configuration.json"
+            }
+        ],
+        "grammars": [
+            {
+                "language": "flax",
+                "scopeName": "source.flax",
+                "path": "./syntaxes/flax.tmLanguage"
+            }
+        ]
     }
 }
