@@ -529,7 +529,7 @@
 			<key>comment</key>
 			<string>import-declaration</string>
 			<key>match</key>
-			<string>\b(import|export)\s+(?:(typealias|struct|class|namespace|enum|protocol|var|fn)\s+)?((?:\B\$[0-9]+|\b[\w^\d][\w\d]*\b|\B`[\w^\d][\w\d]*`\B|[/=\-+!*%&lt;&gt;&amp;|\^~.]+)(?:\.(?:\B\$[0-9]+|\b[\w^\d][\w\d]*\b|\B`[\w^\d][\w\d]*`\B|[/=\-+!*%&lt;&gt;&amp;|\^~.]+))*)</string>
+			<string>\b(import(\s+)(".+")(\s?)((as)(\s+)([_a-zA-Z][_a-zA-Z0-9]+))?)|(export(\s+)([_a-zA-Z][_a-zA-Z0-9]+))\b</string>
 			<key>name</key>
 			<string>meta.import.flax</string>
 		</dict>
@@ -617,7 +617,7 @@
 					<key>comment</key>
 					<string>declaration keyword</string>
 					<key>match</key>
-					<string>\b(class|deinit|enum|extension|fn|import|export|using|init|let|protocol|static|struct|subscript|typealias|var|typeof|typeid|sizeof)\b</string>
+					<string>\b(class|deinit|enum|extension|fn|import|export|using|init|let|protocol|static|union|struct|subscript|typealias|var|typeof|typeid|sizeof)\b</string>
 					<key>name</key>
 					<string>keyword.declaration.flax</string>
 				</dict>
@@ -839,7 +839,7 @@
 			<key>comment</key>
 			<string>Primitive types</string>
 			<key>match</key>
-			<string>\b(((u|i)(8|16|32|64|128))|(u?)int|intptr|f(32|64|80|128)|float|double|bool|void|str|string|char|any|Type|ffi|ustring|rune|value)\b</string>
+			<string>\b(((u|i)(8|16|32|64|128))|(u?)int|intptr|f(32|64|80|128)|float|double|bool|void|str|string|char|any|Type|ffi|ustring|rune)\b</string>
 			<key>name</key>
 			<string>support.type.flax</string>
 		</dict>
@@ -921,7 +921,7 @@
 		<key>storage-type</key>
 		<dict>
 			<key>match</key>
-			<string>\b(var|let|fn|ƒ|class|alloc|free|enum|struct|protocol|extension|typealias|namespace)\b</string>
+			<string>\b(var|let|fn|ƒ|class|alloc|free|enum|struct|union|protocol|extension|typealias|namespace)\b</string>
 			<key>name</key>
 			<string>storage.type.flax</string>
 		</dict>
