@@ -787,43 +787,6 @@
 			<key>name</key>
 			<string>keyword.other.operator.flax</string>
 		</dict>
-		<key>optional-type</key>
-		<dict>
-			<key>beginCaptures</key>
-			<dict>
-				<key>1</key>
-				<dict>
-					<key>name</key>
-					<string>support.type.optional.flax</string>
-				</dict>
-				<key>2</key>
-				<dict>
-					<key>name</key>
-					<string>punctuation.optional.begin.flax</string>
-				</dict>
-			</dict>
-			<key>end</key>
-			<string>(&gt;)</string>
-			<key>endCaptures</key>
-			<dict>
-				<key>1</key>
-				<dict>
-					<key>name</key>
-					<string>punctuation.optional.end.flax</string>
-				</dict>
-			</dict>
-			<key>match</key>
-			<string>\b(Optional)(&lt;)</string>
-			<key>name</key>
-			<string>meta.optional.flax</string>
-			<key>patterns</key>
-			<array>
-				<dict>
-					<key>include</key>
-					<string>$self</string>
-				</dict>
-			</array>
-		</dict>
 		<key>overflow-operator</key>
 		<dict>
 			<key>match</key>
