@@ -276,7 +276,7 @@
 				</dict>
 				<dict>
 					<key>match</key>
-					<string>(?&lt;=[\s(\[{,;:])([/=\-+!*%&lt;&gt;&amp;|\^~.]++)(?=[\s)\]},;:])</string>
+					<string>(?&lt;=[\s(\[{,;:])([(::)/=\-+!*%&lt;&gt;&amp;|\^~.]++)(?=[\s)\]},;:])</string>
 					<key>name</key>
 					<string>keyword.operator.custom.binary.flax</string>
 				</dict>
