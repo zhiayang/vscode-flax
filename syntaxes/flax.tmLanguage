@@ -72,7 +72,7 @@
 		<key>arithmetic-operator</key>
 		<dict>
 			<key>match</key>
-			<string>(?&lt;![/=\-+!*%&lt;&gt;&amp;|\^~.])(\+|\-|\*|\/|≠|÷|≥|≤|#|&lt;\||\|&gt;)(?![/=\-+!*%&lt;&gt;&amp;|\^~.])</string>
+			<string>((?&lt;!\+)\+(?!\+)|(?&lt;!\-)\-(?!\-)|\*|\/|÷)</string>
 			<key>name</key>
 			<string>keyword.operator.arithmetic.flax</string>
 		</dict>
@@ -154,7 +154,7 @@
 		<key>bitwise-operator</key>
 		<dict>
 			<key>match</key>
-			<string>(?&lt;![/=\-+!*%&lt;&gt;&amp;|\^~.])(&amp;|\||\^|&lt;&lt;|&gt;&gt;)(?![/=\-+!*%&lt;&gt;&amp;|\^~.])</string>
+			<string>(&amp;|\||\^|~|&lt;{2}|&gt;{2})(?!=)</string>
 			<key>name</key>
 			<string>keyword.operator.bitwise.flax</string>
 		</dict>
@@ -260,7 +260,7 @@
 		<key>comparative-operator</key>
 		<dict>
 			<key>match</key>
-			<string>(?&lt;![/=\-+!*%&lt;&gt;&amp;|\^~.])((=|!)==?|(&lt;|&gt;)=?|~=)(?![/=\-+!*%&lt;&gt;&amp;|\^~.])</string>
+			<string>((((?&lt;!&lt;)&lt;(?!&lt;)|(?&lt;!&gt;)&gt;(?!&gt;)|=)(=?))|!=|≠|≥|≤)</string>
 			<key>name</key>
 			<string>keyword.operator.comparative.flax</string>
 		</dict>
@@ -315,20 +315,6 @@
 			<key>name</key>
 			<string>constant.numeric.flax</string>
 		</dict>
-		<key>type-body</key>
-		<dict>
-			<key>comment</key>
-			<string>type body</string>
-			<key>name</key>
-			<string>meta.type-body.flax</string>
-			<key>patterns</key>
-			<array>
-				<dict>
-					<key>include</key>
-					<string>#code-block</string>
-				</dict>
-			</array>
-		</dict>
 		<key>type-declaration</key>
 		<dict>
 			<key>match</key>
@@ -353,28 +339,10 @@
 			<key>name</key>
 			<string>meta.type-declaration.flax</string>
 		</dict>
-		<key>function-body</key>
-		<dict>
-			<key>comment</key>
-			<string>function-body</string>
-			<key>name</key>
-			<string>meta.function-body.flax</string>
-			<key>patterns</key>
-			<array>
-				<dict>
-					<key>include</key>
-					<string>#inline-code-block</string>
-				</dict>
-				<dict>
-					<key>include</key>
-					<string>#code-block</string>
-				</dict>
-			</array>
-		</dict>
 		<key>function-declaration</key>
 		<dict>
 			<key>begin</key>
-			<string>\b(fn|ƒ)\s+([a-zA-Z_]\w*)\s*((&lt;)(.+)(&gt;))?\s*\(</string>
+			<string>\b(fn|ƒ)\s+([a-zA-Z_]\w*)\s*((&lt;)(.+)(&gt;))?</string>
 			<key>beginCaptures</key>
 			<dict>
 				<key>1</key>    <dict><key>name</key> <string>storage.type.function.flax</string> </dict>
@@ -382,26 +350,27 @@
 				<key>4</key>    <dict><key>name</key> <string>punctuation.definition.keyword.flax</string> </dict>
 				<key>6</key>    <dict><key>name</key> <string>punctuation.definition.keyword.flax</string> </dict>
 			</dict>
+			<key>patterns</key>
+			<array>
+				<dict><key>include</key> <string>#type</string></dict>
+				<dict><key>include</key> <string>#operator</string></dict>
+				<dict><key>include</key> <string>#keyword</string></dict>
+			</array>
 			<key>end</key>
 			<string>(\n|\{)</string>
 			<key>name</key>
 			<string>meta.function-declaration.flax</string>
-			<key>patterns</key>
-			<array>
-				<dict><key>include</key> <string>#type</string></dict>
-				<dict><key>include</key> <string>#keyword</string></dict>
-				<dict><key>include</key> <string>#operator</string></dict>
-				<dict><key>include</key> <string>#misc-keyword-symbols</string></dict>
-			</array>
 		</dict>
 		<key>misc-keyword-symbols</key>
 		<dict>
 			<key>match</key>
-			<string>(-&gt;|=&gt;)|(::|\.)</string>
+			<string>(-&gt;|=&gt;)|(:{1,2}|\.)|([\(\)\[\]])|(;)</string>
 			<key>captures</key>
 			<dict>
 				<key>1</key>    <dict><key>name</key> <string>punctuation.definition.keyword.arrow.flax</string> </dict>
 				<key>2</key>    <dict><key>name</key> <string>punctuation.separator.flax</string> </dict>
+				<key>3</key>    <dict><key>name</key> <string>punctuation.separator.parens.flax</string> </dict>
+				<key>4</key>    <dict><key>name</key> <string>punctuation.separator.terminator.flax</string> </dict>
 			</dict>
 			<key>name</key>
 			<string>punctuation</string>
@@ -611,7 +580,7 @@
 		<key>logical-operator</key>
 		<dict>
 			<key>match</key>
-			<string>(?&lt;![/=\-+!*%&lt;&gt;&amp;|\^~.])(!|&amp;&amp;|\|\|)(?![/=\-+!*%&lt;&gt;&amp;|\^~.])</string>
+			<string>(&amp;{2}|\|{2}|!)</string>
 			<key>name</key>
 			<string>keyword.operator.logical.flax</string>
 		</dict>
@@ -695,14 +664,14 @@
 		<key>range-operator</key>
 		<dict>
 			<key>match</key>
-			<string>(\.\.(\.|&lt;))</string>
+			<string>((\.){3}|((\.){2}|&lt;))</string>
 			<key>name</key>
 			<string>keyword.operator.range.flax</string>
 		</dict>
 		<key>remainder-operator</key>
 		<dict>
 			<key>match</key>
-			<string>(%)</string>
+			<string>(%(?!=))</string>
 			<key>name</key>
 			<string>keyword.operator.remainder.flax</string>
 		</dict>

@@ -3,9 +3,36 @@
 // Licensed under the Apache License Version 2.0.
 
 
-fn foo<T>(a: int) -> int
+fn overloadErrorTest()
 {
+	fn printThings(mul: f64, flts: [f64: ...])
+	{
+		printf("floats: ");
+		for i in flts { printf("%.1f ", mul * i) }
+
+		printf("\n")
+	}
+
+	fn printThings(mul: str, flts: [f64: ...])
+	{
+		printf("floats: ");
+		for i in flts { printf("%s: %.1f ", mul.ptr, i) }
+
+		printf("\n")
+	}
+
+	fn printThings()
+	{
+		printf("print things 3\n")
+	}
+
+	do {
+		printThings(30, ...[as f64: 1, 2, 3, 4, 5 ])
+		printThings(0.813, 1, 2, 4.41, 39, 491.3, 381.7)
+	}
 }
+
+
 
 
 
@@ -18,7 +45,7 @@ fn foo<T>(a: int) -> int
 export test_linkedlist
 import "libc" as foo
 
-class LinkedList<T> adsafasdf
+class LinkedList<T>
 {
 	struct Node
 	{
