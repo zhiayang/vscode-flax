@@ -389,6 +389,8 @@
 			<key>patterns</key>
 			<array>
 				<dict><key>include</key> <string>#type</string></dict>
+				<dict><key>include</key> <string>#keyword</string></dict>
+				<dict><key>include</key> <string>#operator</string></dict>
 				<dict><key>include</key> <string>#misc-keyword-symbols</string></dict>
 			</array>
 		</dict>
