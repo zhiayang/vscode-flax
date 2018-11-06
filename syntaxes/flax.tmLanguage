@@ -408,7 +408,7 @@
 			<key>comment</key>
 			<string>import-declaration</string>
 			<key>match</key>
-			<string>\b(import)\s+(".+")(\s+as\s+([a-zA-Z_][\w]*))?\b</string>
+			<string>\b(import)\s+(".+")(\s+as\s+([a-zA-Z_][\w]*))?</string>
 			<key>captures</key>
 			<dict>
 				<key>1</key>    <dict><key>name</key> <string>keyword.other.import.flax</string> </dict>
