@@ -1,17 +1,95 @@
-export b
-import "foo" as a
+// test.flx
+// Copyright (c) 2017, zhiayang@gmail.com
+// Licensed under the Apache License Version 2.0.
 
-@entry fn main()
+
+fn foo<T>(a: int) -> int
 {
-	do {
-		union option<T>
+}
+
+
+
+
+
+// linkedlist.flx
+// Copyright (c) 2017, zhiayang@gmail.com
+// Licensed under the Apache License Version 2.0.
+
+export test_linkedlist
+import "libc" as foo
+
+class LinkedList<T> adsafasdf
+{
+	struct Node
+	{
+		var prev: &Node
+		var next: &Node
+
+		var data: T
+	}
+
+	var head: &Node
+	var tail: &Node
+
+	var count: int
+
+	init(data: T)
+	{
+		printf("called init\n")
+	}
+
+	mut fn insert(thing: T)
+	{
+		var nn = alloc mut Node (data: thing, prev: null, next: null)
+
+		if head == null { head = nn; tail = nn }
+		else
 		{
-			some: T
-			none
+			var ot = tail as mut
+			tail = nn
+
+			nn.prev = ot
+			ot.next = nn
 		}
 
-		let x = option<T: str>.some("300")
+		count += 1
+	}
 
-		printf("x = %s\n", x as option<T: int>.some)
+	static fn hello() { printf("hi\n"); }
+}
+
+
+public fn doLinkedListTest()
+{
+	do {
+		var list = LinkedList(data: 41)
+		LinkedList!<int>::hello()
+
+		var list2 = LinkedList(data: "foo")
+		list2.insert("hello")
+		list2.insert("world")
+
+		list.insert(10)
+		list.insert(20)
+		list.insert(30)
+		list.insert(40)
+
+		do {
+			var head = list.head
+			while(head)
+			{
+				printf("%d\n", head.data)
+				head = head.next
+			}
+		}
+
+		do {
+			var head = list2.head
+			while(head)
+			{
+				printf("%s\n", head.data)
+				head = head.next
+			}
+		}
 	}
 }
