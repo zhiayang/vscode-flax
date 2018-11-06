@@ -295,6 +295,10 @@
 				</dict>
 				<dict>
 					<key>include</key>
+					<string>#foreign-function-declaration</string>
+				</dict>
+				<dict>
+					<key>include</key>
 					<string>#type-declaration</string>
 				</dict>
 			</array>
@@ -360,6 +364,30 @@
 			<string>(\n|\{)</string>
 			<key>name</key>
 			<string>meta.function-declaration.flax</string>
+		</dict>
+		<key>foreign-function-declaration</key>
+		<dict>
+			<key>begin</key>
+			<string>\b(ffi)\s+(fn|ƒ)\s+([a-zA-Z_]\w*)\s*((&lt;)(.+)(&gt;))?</string>
+			<key>beginCaptures</key>
+			<dict>
+				<key>1</key>    <dict><key>name</key> <string>storage.modifier.attribute.flax</string> </dict>
+				<key>2</key>    <dict><key>name</key> <string>storage.type.function.flax</string> </dict>
+				<key>3</key>    <dict><key>name</key> <string>entity.type.function.flax</string> </dict>
+				<key>5</key>    <dict><key>name</key> <string>punctuation.definition.keyword.flax</string> </dict>
+				<key>7</key>    <dict><key>name</key> <string>punctuation.definition.keyword.flax</string> </dict>
+			</dict>
+			<key>patterns</key>
+			<array>
+				<dict><key>include</key> <string>#type</string></dict>
+				<dict><key>include</key> <string>#operator</string></dict>
+				<dict><key>include</key> <string>#keyword</string></dict>
+				<dict><key>include</key> <string>#string-literal</string></dict>
+			</array>
+			<key>end</key>
+			<string>(\n|\{)</string>
+			<key>name</key>
+			<string>meta.foreign-function-declaration.flax</string>
 		</dict>
 		<key>misc-keyword-symbols</key>
 		<dict>

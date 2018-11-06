@@ -3,6 +3,13 @@
 // Licensed under the Apache License Version 2.0.
 
 
+ffi fn rofl() as "lmao"
+ffi fn rofl(x: int) -> void as "haha"
+
+
+
+
+
 fn overloadErrorTest()
 {
 	fn printThings(mul: f64, flts: [f64: ...])
