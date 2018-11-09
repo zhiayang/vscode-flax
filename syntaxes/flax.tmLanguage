@@ -322,7 +322,7 @@
 		<key>type-declaration</key>
 		<dict>
 			<key>match</key>
-			<string>\b(class|struct|protocol|union|enum|extension)\s+([a-zA-Z_]\w*)\s*((&lt;)(.+)(&gt;))?(\s*:\s*(::)?[a-zA-Z_][\w:.,&lt;&gt;]*)?</string>
+			<string>\b(class|struct|trait|union|enum|extension)\s+([a-zA-Z_]\w*)\s*((&lt;)(.+)(&gt;))?(\s*:\s*(::)?[a-zA-Z_][\w:.,&lt;&gt;]*)?</string>
 			<key>captures</key>
 			<dict>
 				<key>1</key>    <dict>  <key>name</key> <string>storage.type.flax</string>                    </dict>
@@ -545,7 +545,7 @@
 					<key>comment</key>
 					<string>declaration keyword</string>
 					<key>match</key>
-					<string>\b(deinit|fn|using|init|let|protocol|static|subscript|typealias|var|typeof|typeid|sizeof)\b</string>
+					<string>\b(deinit|fn|using|init|let|static|subscript|typealias|var|typeof|typeid|sizeof)\b</string>
 					<key>name</key>
 					<string>keyword.declaration.flax</string>
 				</dict>
