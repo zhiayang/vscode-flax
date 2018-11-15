@@ -322,14 +322,14 @@
 		<key>type-declaration</key>
 		<dict>
 			<key>match</key>
-			<string>\b(class|struct|trait|union|enum|extend)\s+([a-zA-Z_]\w*)\s*((&lt;)(.+)(&gt;))?(\s*:\s*(::)?[a-zA-Z_][\w:.,&lt;&gt;]*)?</string>
+			<string>\b(class|struct|trait|union|enum|extend)\s+([a-zA-Z_]\w*)\s*((&lt;)(((?!-&gt;).)+)(&gt;))?(\s*:\s*(::)?[a-zA-Z_][\w:.,&lt;&gt;]*)?</string>
 			<key>captures</key>
 			<dict>
 				<key>1</key>    <dict>  <key>name</key> <string>storage.type.flax</string>                    </dict>
 				<key>2</key>    <dict>  <key>name</key> <string>entity.type.flax</string>                     </dict>
 				<key>4</key>    <dict>  <key>name</key> <string>punctuation.definition.keyword.flax</string>  </dict>
-				<key>6</key>    <dict>  <key>name</key> <string>punctuation.definition.keyword.flax</string>  </dict>
-				<key>7</key>    <dict>  <key>name</key> <string>entity.type.flax</string>                     </dict>
+				<key>7</key>    <dict>  <key>name</key> <string>punctuation.definition.keyword.flax</string>  </dict>
+				<key>8</key>    <dict>  <key>name</key> <string>entity.type.flax</string>                     </dict>
 			</dict>
 			<key>patterns</key>
 			<array>
@@ -346,13 +346,13 @@
 		<key>function-declaration</key>
 		<dict>
 			<key>begin</key>
-			<string>\b(fn|ƒ)\s+([a-zA-Z_]\w*)\s*((&lt;)(.+)(&gt;))?</string>
+			<string>\b(fn|ƒ)\s+([a-zA-Z_]\w*)\s*((&lt;)(((?!-&gt;).)+)(&gt;))?</string>
 			<key>beginCaptures</key>
 			<dict>
 				<key>1</key>    <dict><key>name</key> <string>storage.type.function.flax</string> </dict>
 				<key>2</key>    <dict><key>name</key> <string>entity.type.function.flax</string> </dict>
 				<key>4</key>    <dict><key>name</key> <string>punctuation.definition.keyword.flax</string> </dict>
-				<key>6</key>    <dict><key>name</key> <string>punctuation.definition.keyword.flax</string> </dict>
+				<key>7</key>    <dict><key>name</key> <string>punctuation.definition.keyword.flax</string> </dict>
 			</dict>
 			<key>patterns</key>
 			<array>
@@ -368,14 +368,12 @@
 		<key>foreign-function-declaration</key>
 		<dict>
 			<key>begin</key>
-			<string>\b(ffi)\s+(fn|ƒ)\s+([a-zA-Z_]\w*)\s*((&lt;)(.+)(&gt;))?</string>
+			<string>\b(ffi)\s+(fn|ƒ)\s+([a-zA-Z_]\w*)\s*</string>
 			<key>beginCaptures</key>
 			<dict>
 				<key>1</key>    <dict><key>name</key> <string>storage.modifier.attribute.flax</string> </dict>
 				<key>2</key>    <dict><key>name</key> <string>storage.type.function.flax</string> </dict>
 				<key>3</key>    <dict><key>name</key> <string>entity.type.function.flax</string> </dict>
-				<key>5</key>    <dict><key>name</key> <string>punctuation.definition.keyword.flax</string> </dict>
-				<key>7</key>    <dict><key>name</key> <string>punctuation.definition.keyword.flax</string> </dict>
 			</dict>
 			<key>patterns</key>
 			<array>
