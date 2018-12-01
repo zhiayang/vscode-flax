@@ -429,6 +429,34 @@
 			<key>name</key>
 			<string>keyword.control.if.flax</string>
 		</dict>
+		<key>import-as-declaration</key>
+		<dict>
+			<key>comment</key>
+			<string>handles proper matching for the 'as' part.</string>
+			<key>begin</key>
+			<string>\b(as)\b</string>
+			<key>beginCaptures</key>
+			<dict>
+				<key>1</key>    <dict><key>name</key> <string>keyword.flax</string> </dict>
+			</dict>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>match</key>
+					<string>([a-zA-Z_]\w*)</string>
+					<key>name</key>
+					<string>storage.type.module.import.flax</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#misc-keyword-symbols</string>
+				</dict>
+			</array>
+			<key>end</key>
+			<string>($)</string>
+			<key>name</key>
+			<string>meta.import.as.flax</string>
+		</dict>
 		<key>import-declaration</key>
 		<dict>
 			<key>comment</key>
@@ -442,6 +470,14 @@
 			<key>patterns</key>
 			<array>
 				<dict>
+					<key>include</key>
+					<string>#import-as-declaration</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#string-literal</string>
+				</dict>
+				<dict>
 					<key>match</key>
 					<string>([a-zA-Z_]\w*)</string>
 					<key>name</key>
@@ -449,22 +485,13 @@
 				</dict>
 				<dict>
 					<key>include</key>
-					<string>#string-literal</string>
-				</dict>
-				<dict>
-					<key>include</key>
 					<string>#misc-keyword-symbols</string>
 				</dict>
 			</array>
 			<key>end</key>
-			<string>(as\s+([a-zA-Z_]\w*)|$)</string>
-			<key>endCaptures</key>
-			<dict>
-				<key>1</key>    <dict><key>name</key>   <string>keyword.flax</string> </dict>
-				<key>2</key>    <dict><key>name</key>   <string>storage.type.module.import.flax</string> </dict>
-			</dict>
+			<string>($)</string>
 			<key>name</key>
-			<string>meta.export.flax</string>
+			<string>meta.import.flax</string>
 		</dict>
 		<key>export-declaration</key>
 		<dict>

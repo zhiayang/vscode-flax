@@ -4,7 +4,7 @@
 
 export foo::bar::qux
 
-import biz::baz::boz as fff
+import biz::baz::boz as fff::bar::qux
 import "biz/baz/boz.flx" as bbb
 
 ffi fn rofl() as "lmao"
