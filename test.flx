@@ -2,6 +2,10 @@
 // Copyright (c) 2017, zhiayang@gmail.com
 // Licensed under the Apache License Version 2.0.
 
+export foo::bar::qux
+
+import biz::baz::boz as fff
+import "biz/baz/boz.flx" as bbb
 
 ffi fn rofl() as "lmao"
 ffi fn rofl(x: int) -> void as "haha"

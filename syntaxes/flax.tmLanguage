@@ -325,7 +325,7 @@
 			<string>\b(class|struct|trait|union|enum|extend)\s+([a-zA-Z_]\w*)\s*((&lt;)(((?!-&gt;).)+)(&gt;))?(\s*:\s*(::)?[a-zA-Z_][\w:.,&lt;&gt;]*)?</string>
 			<key>captures</key>
 			<dict>
-				<key>1</key>    <dict>  <key>name</key> <string>storage.type.flax</string>                    </dict>
+				<key>1</key>    <dict>  <key>name</key> <string>support.class.flax</string>                    </dict>
 				<key>2</key>    <dict>  <key>name</key> <string>entity.type.flax</string>                     </dict>
 				<key>4</key>    <dict>  <key>name</key> <string>punctuation.definition.keyword.flax</string>  </dict>
 				<key>7</key>    <dict>  <key>name</key> <string>punctuation.definition.keyword.flax</string>  </dict>
@@ -433,31 +433,66 @@
 		<dict>
 			<key>comment</key>
 			<string>import-declaration</string>
-			<key>match</key>
-			<string>\b(import)\s+(".+")(\s+as\s+([a-zA-Z_][\w]*))?</string>
-			<key>captures</key>
+			<key>begin</key>
+			<string>\b(import)\s+</string>
+			<key>beginCaptures</key>
 			<dict>
-				<key>1</key>    <dict><key>name</key> <string>keyword.other.import.flax</string> </dict>
-				<key>2</key>    <dict><key>name</key> <string>string.flax</string> </dict>
-				<key>3</key>    <dict><key>name</key> <string>keyword.flax</string> </dict>
-				<key>4</key>    <dict><key>name</key> <string>support.type.module.import.flax</string> </dict>
+				<key>1</key>    <dict><key>name</key> <string>keyword.other.export.flax</string> </dict>
+			</dict>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>match</key>
+					<string>([a-zA-Z_]\w*)</string>
+					<key>name</key>
+					<string>storage.module.import.flax</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#string-literal</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#misc-keyword-symbols</string>
+				</dict>
+			</array>
+			<key>end</key>
+			<string>(as\s+([a-zA-Z_]\w*)|$)</string>
+			<key>endCaptures</key>
+			<dict>
+				<key>1</key>    <dict><key>name</key>   <string>keyword.flax</string> </dict>
+				<key>2</key>    <dict><key>name</key>   <string>storage.type.module.import.flax</string> </dict>
 			</dict>
 			<key>name</key>
-			<string>meta.import.flax</string>
+			<string>meta.export.flax</string>
 		</dict>
 		<key>export-declaration</key>
 		<dict>
 			<key>comment</key>
 			<string>export-declaration</string>
-			<key>match</key>
-			<string>\b(export)\s+([a-zA-Z_][\w]*)\b</string>
-			<key>captures</key>
+			<key>begin</key>
+			<string>\b(export)\s+</string>
+			<key>beginCaptures</key>
 			<dict>
 				<key>1</key>    <dict><key>name</key> <string>keyword.other.export.flax</string> </dict>
-				<key>2</key>    <dict><key>name</key> <string>storage.type.builtin.export.flax</string> </dict>
 			</dict>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>match</key>
+					<string>([a-zA-Z_]\w*)</string>
+					<key>name</key>
+					<string>storage.module.export.flax</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#misc-keyword-symbols</string>
+				</dict>
+			</array>
+			<key>end</key>
+			<string>($)</string>
 			<key>name</key>
-			<string>meta.import.flax</string>
+			<string>meta.export.flax</string>
 		</dict>
 		<key>in-line-comment</key>
 		<dict>
@@ -543,7 +578,7 @@
 					<key>comment</key>
 					<string>declaration keyword</string>
 					<key>match</key>
-					<string>\b(deinit|fn|using|init|let|static|subscript|typealias|var|typeof|typeid|sizeof)\b</string>
+					<string>\b(deinit|fn|using|init|let|static|subscript|typealias|var|typeof|typeid|sizeof|import|export)\b</string>
 					<key>name</key>
 					<string>keyword.declaration.flax</string>
 				</dict>
@@ -685,7 +720,7 @@
 			<key>match</key>
 			<string>\b(((u|i)(8|16|32|64|128))|(u?)int|intptr|f(32|64|80|128)|float|double|bool|void|str|string|char|any|ustring|rune)\b</string>
 			<key>name</key>
-			<string>storage.type.builtin.flax</string>
+			<string>support.type.builtin.flax</string>
 		</dict>
 		<key>range-operator</key>
 		<dict>
