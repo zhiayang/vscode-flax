@@ -301,6 +301,10 @@
 					<key>include</key>
 					<string>#type-declaration</string>
 				</dict>
+				<dict>
+					<key>include</key>
+					<string>#using-declaration</string>
+				</dict>
 			</array>
 		</dict>
 		<key>declaration-specifier</key>
@@ -520,6 +524,38 @@
 			<string>($)</string>
 			<key>name</key>
 			<string>meta.export.flax</string>
+		</dict>
+		<key>using-declaration</key>
+		<dict>
+			<key>comment</key>
+			<string>using-declaration</string>
+			<key>begin</key>
+			<string>\b(using)\s+</string>
+			<key>beginCaptures</key>
+			<dict>
+				<key>1</key>    <dict><key>name</key> <string>keyword.declaration.flax</string> </dict>
+			</dict>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>include</key>
+					<string>#import-as-declaration</string>
+				</dict>
+				<dict>
+					<key>match</key>
+					<string>([a-zA-Z_]\w*)</string>
+					<key>name</key>
+					<string>storage.module.using.flax</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#misc-keyword-symbols</string>
+				</dict>
+			</array>
+			<key>end</key>
+			<string>($)</string>
+			<key>name</key>
+			<string>meta.using.flax</string>
 		</dict>
 		<key>in-line-comment</key>
 		<dict>

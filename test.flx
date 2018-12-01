@@ -10,7 +10,7 @@ import "biz/baz/boz.flx" as bbb
 ffi fn rofl() as "lmao"
 ffi fn rofl(x: int) -> void as "haha"
 
-
+using bar::lol as foo::qux
 
 
 
