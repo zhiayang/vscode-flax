@@ -363,6 +363,7 @@
 				<dict><key>include</key> <string>#type</string></dict>
 				<dict><key>include</key> <string>#operator</string></dict>
 				<dict><key>include</key> <string>#keyword</string></dict>
+				<dict><key>include</key> <string>#access-modifier</string></dict>
 			</array>
 			<key>end</key>
 			<string>(\n|\{)</string>
@@ -385,6 +386,7 @@
 				<dict><key>include</key> <string>#operator</string></dict>
 				<dict><key>include</key> <string>#keyword</string></dict>
 				<dict><key>include</key> <string>#string-literal</string></dict>
+				<dict><key>include</key> <string>#access-modifier</string></dict>
 			</array>
 			<key>end</key>
 			<string>(\n|\{)</string>
