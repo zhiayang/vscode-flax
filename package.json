@@ -2,7 +2,7 @@
     "name": "flax",
     "displayName": "flax-language",
     "description": "Syntax definition for the Flax language",
-    "version": "0.3.11",
+    "version": "0.3.12",
     "publisher": "zhiayang",
     "engines": {
         "vscode": "^1.16.0"
