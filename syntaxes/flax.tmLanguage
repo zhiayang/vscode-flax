@@ -32,10 +32,6 @@
 		</dict>
 		<dict>
 			<key>include</key>
-			<string>#operator</string>
-		</dict>
-		<dict>
-			<key>include</key>
 			<string>#declaration</string>
 		</dict>
 		<dict>
@@ -56,15 +52,23 @@
 		</dict>
 		<dict>
 			<key>include</key>
-			<string>#identifier</string>
-		</dict>
-		<dict>
-			<key>include</key>
 			<string>#generic-inst</string>
 		</dict>
 		<dict>
 			<key>include</key>
 			<string>#access-modifier</string>
+		</dict>
+		<dict>
+			<key>include</key>
+			<string>#misc-keyword-symbols</string>
+		</dict>
+		<dict>
+			<key>include</key>
+			<string>#operator</string>
+		</dict>
+		<dict>
+			<key>include</key>
+			<string>#identifier</string>
 		</dict>
 	</array>
 	<key>repository</key>
@@ -410,7 +414,12 @@
 		<key>identifier</key>
 		<dict>
 			<key>match</key>
-			<string>(\B((::)?[a-zA-Z_]\w*)\B)</string>
+			<!-- <string>(\B((::)?[a-zA-Z_]\w*)\B)</string> -->
+			<string>(::)?([a-zA-Z_]\w*)</string>
+			<key>captures</key>
+			<dict>
+				<key>1</key>    <dict><key>name</key> <string>punctuation.separator.flax</string> </dict>
+			</dict>
 			<key>name</key>
 			<string>meta.identifier.flax</string>
 		</dict>
@@ -424,7 +433,7 @@
 				<key>4</key>    <dict><key>name</key> <string>punctuation.definition.keyword.flax</string> </dict>
 			</dict>
 			<key>name</key>
-			<string>meta.identifier.flax</string>
+			<string>meta.generic-inst.flax</string>
 		</dict>
 		<key>if-statement-keyword</key>
 		<dict>
@@ -762,10 +771,6 @@
 				<dict>
 					<key>include</key>
 					<string>#type-casting-operator</string>
-				</dict>
-				<dict>
-					<key>include</key>
-					<string>#custom-operator</string>
 				</dict>
 			</array>
 		</dict>

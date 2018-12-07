@@ -16,6 +16,7 @@ using bar::lol as foo::qux
 
 fn overloadErrorTest()
 {
+	let bar = ::foo
 	fn printThings(mul: f64, flts: [f64: ...])
 	{
 		printf("floats: ");
