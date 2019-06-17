@@ -395,6 +395,10 @@
 			</array>
 			<key>end</key>
 			<string>((\n)|(\{)|(;)|(=&gt;))</string>
+			<key>endCaptures</key>
+			<dict>
+				<key>5</key>    <dict><key>name</key> <string>punctuation.definition.keyword.arrow.flax</string> </dict>
+			</dict>
 			<key>name</key>
 			<string>meta.function-declaration.flax</string>
 		</dict>
