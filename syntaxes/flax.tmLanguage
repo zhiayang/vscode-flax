@@ -449,12 +449,36 @@
 		</dict>
 		<key>generic-inst</key>
 		<dict>
-			<key>match</key>
-			<string>((!&lt;)(.+)(&gt;))</string>
-			<key>captures</key>
+			<key>begin</key>
+			<string>(!&lt;)</string>
+			<key>beginCaptures</key>
 			<dict>
-				<key>2</key>    <dict><key>name</key> <string>punctuation.definition.keyword.flax</string> </dict>
-				<key>4</key>    <dict><key>name</key> <string>punctuation.definition.keyword.flax</string> </dict>
+				<key>1</key>
+				<dict>
+					<key>name</key>
+					<string>punctuation.definition.keyword.flax</string>
+				</dict>
+			</dict>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>include</key>
+					<string>#type</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#misc-keyword-symbols</string>
+				</dict>
+			</array>
+			<key>end</key>
+			<string>(&gt;)</string>
+			<key>endCaptures</key>
+			<dict>
+				<key>1</key>
+				<dict>
+					<key>name</key>
+					<string>punctuation.definition.keyword.flax</string>
+				</dict>
 			</dict>
 			<key>name</key>
 			<string>meta.generic-inst.flax</string>
