@@ -708,6 +708,10 @@
 				</dict>
 				<dict>
 					<key>include</key>
+					<string>#character-literal</string>
+				</dict>
+				<dict>
+					<key>include</key>
 					<string>#special-literal</string>
 				</dict>
 			</array>
@@ -844,6 +848,51 @@
 			<key>name</key>
 			<string>storage.modifier.attribute.flax</string>
 		</dict>
+		<key>character-escapes</key>
+		<dict>
+			<key>match</key>
+			<string>\\([0tnra\"\'\\]|x\h{2}|u\h{4}|U\h{8})</string>
+			<key>name</key>
+			<string>constant.character.escape.flax</string>
+		</dict>
+		<key>character-literal</key>
+		<dict>
+			<key>begin</key>
+			<string>'</string>
+			<key>beginCaptures</key>
+			<dict>
+				<key>0</key>
+				<dict>
+					<key>name</key>
+					<string>string.quoted.single.flax</string>
+				</dict>
+			</dict>
+			<key>end</key>
+			<string>'</string>
+			<key>endCaptures</key>
+			<dict>
+				<key>0</key>
+				<dict>
+					<key>name</key>
+					<string>string.quoted.single.flax</string>
+				</dict>
+			</dict>
+			<key>name</key>
+			<string>meta.literal.character.flax</string>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>include</key>
+					<string>#character-escapes</string>
+				</dict>
+				<dict>
+					<key>match</key>
+					<string>(.)</string>
+					<key>name</key>
+					<string>string.quoted.double.flax</string>
+				</dict>
+			</array>
+		</dict>
 		<key>string-literal</key>
 		<dict>
 			<key>begin</key>
@@ -871,10 +920,8 @@
 			<key>patterns</key>
 			<array>
 				<dict>
-					<key>match</key>
-					<string>\\([0tnr\"\'\\]|x\h{2}|u\h{4}|U\h{8})</string>
-					<key>name</key>
-					<string>constant.character.escape.flax</string>
+					<key>include</key>
+					<string>#character-escapes</string>
 				</dict>
 				<dict>
 					<key>begin</key>
