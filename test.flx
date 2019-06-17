@@ -13,10 +13,10 @@ ffi fn rofl(x: int) -> void as "haha"
 using bar::lol as foo::qux
 
 
-
 fn overloadErrorTest()
 {
-	let bar = ::foo
+	fn foo() => "asdf"
+
 	fn printThings(mul: f64, flts: [f64: ...])
 	{
 		printf("floats: ");
@@ -41,6 +41,36 @@ fn overloadErrorTest()
 	do {
 		printThings(30, ...[as f64: 1, 2, 3, 4, 5 ])
 		printThings(0.813, 1, 2, 4.41, 39, 491.3, 381.7)
+	}
+}
+
+
+@raw union ipv4
+{
+	_: struct {
+		_: @raw union {
+			bytes2: [u8: 4]
+			raw3: u32
+		}
+	}
+
+	_: struct {
+		bytes: [u8: 4]
+	}
+
+	_: struct {
+		raw2: u32
+	}
+
+	raw: u32
+}
+
+
+struct foo
+{
+	x: int
+	_: struct {
+
 	}
 }
 

@@ -309,6 +309,10 @@
 					<key>include</key>
 					<string>#using-declaration</string>
 				</dict>
+				<dict>
+					<key>include</key>
+					<string>#variable-declaration</string>
+				</dict>
 			</array>
 		</dict>
 		<key>declaration-specifier</key>
@@ -327,10 +331,30 @@
 			<key>name</key>
 			<string>constant.numeric.flax</string>
 		</dict>
+		<key>variable-declaration</key>
+		<dict>
+			<key>begin</key>
+			<string>\b(var|let)\s+([a-zA-Z_]\w*)\s*(:)?\s*</string>
+			<key>beginCaptures</key>
+			<dict>
+				<key>1</key>    <dict><key>name</key> <string>storage.type.variable.flax</string> </dict>
+				<key>2</key>    <dict><key>name</key> <string>entity.type.variable.flax</string> </dict>
+				<key>3</key>    <dict><key>name</key> <string>punctuation.support.flax</string> </dict>
+			</dict>
+			<key>patterns</key>
+			<array>
+				<dict><key>include</key><string>#type</string></dict>
+				<dict><key>include</key><string>#type-declaration</string></dict>
+			</array>
+			<key>end</key>
+			<string>(\n|;|=)</string>
+			<key>name</key>
+			<string>meta.variable-declaration.flax</string>
+		</dict>
 		<key>type-declaration</key>
 		<dict>
 			<key>match</key>
-			<string>\b(class|struct|trait|union|enum|extend)\s+([a-zA-Z_]\w*)\s*((&lt;)(((?!-&gt;).)+)(&gt;))?(\s*:\s*(::)?[a-zA-Z_][\w:.,&lt;&gt;]*)?</string>
+			<string>\b(class|struct|trait|union|enum|extend)\s+([a-zA-Z_]\w*)?\s*((&lt;)(((?!-&gt;).)+)(&gt;))?(\s*:\s*(::)?[a-zA-Z_][\w:.,&lt;&gt;]*)?</string>
 			<key>captures</key>
 			<dict>
 				<key>1</key>    <dict>  <key>name</key> <string>support.class.flax</string>                    </dict>
@@ -370,7 +394,7 @@
 				<dict><key>include</key> <string>#access-modifier</string></dict>
 			</array>
 			<key>end</key>
-			<string>(\n|\{)</string>
+			<string>((\n)|(\{)|(;)|(=&gt;))</string>
 			<key>name</key>
 			<string>meta.function-declaration.flax</string>
 		</dict>
