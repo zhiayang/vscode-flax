@@ -784,6 +784,13 @@
 			<key>name</key>
 			<string>keyword.control.loop.flax</string>
 		</dict>
+		<key>directive</key>
+		<dict>
+			<key>match</key>
+			<string>#(run|if)</string>
+			<key>name</key>
+			<string>keyword.directive</string>
+		</dict>
 		<key>operator</key>
 		<dict>
 			<key>patterns</key>
@@ -827,6 +834,10 @@
 				<dict>
 					<key>include</key>
 					<string>#type-casting-operator</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#directive</string>
 				</dict>
 			</array>
 		</dict>
