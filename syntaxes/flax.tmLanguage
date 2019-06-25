@@ -83,7 +83,7 @@
 		<key>assignment-operator</key>
 		<dict>
 			<key>match</key>
-			<string>(?&lt;![/=\-+!*%&lt;&gt;&amp;|\^~.])(\+|\-|\*|\/|%|&lt;&lt;|&gt;&gt;|&amp;|\^|\||&amp;&amp;|\|\|)?=(?![/=\-+!*%&lt;&gt;&amp;|\^~.])</string>
+			<string>(=|\+=|-=|\*=|\/=|%=|\|=|&amp;=|\^=|&lt;&lt;=|&gt;&gt;=)</string>
 			<key>name</key>
 			<string>keyword.operator.assignment.flax</string>
 		</dict>
@@ -344,10 +344,11 @@
 			<key>patterns</key>
 			<array>
 				<dict><key>include</key><string>#type</string></dict>
+				<dict><key>include</key><string>#operator</string></dict>
 				<dict><key>include</key><string>#type-declaration</string></dict>
 			</array>
 			<key>end</key>
-			<string>(\n|;|=)</string>
+			<string>(\n|;|(?==))</string>
 			<key>name</key>
 			<string>meta.variable-declaration.flax</string>
 		</dict>

@@ -15,6 +15,8 @@ using bar::lol as foo::qux
 
 fn overloadErrorTest()
 {
+	let k = 30
+
 	fn foo() -> int => "asdf"
 
 	fn printThings(mul: f64, flts: [f64: ...])
