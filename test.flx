@@ -13,6 +13,11 @@ ffi fn rofl(x: int) -> void as "haha"
 using bar::lol as foo::qux
 
 
+fn thing(x: int = asdf, a:int = 30)
+{
+}
+
+
 fn overloadErrorTest()
 {
 	let k = 30

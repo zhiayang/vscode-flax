@@ -48,10 +48,6 @@
 		</dict>
 		<dict>
 			<key>include</key>
-			<string>#boolean</string>
-		</dict>
-		<dict>
-			<key>include</key>
 			<string>#generic-inst</string>
 		</dict>
 		<dict>
@@ -179,7 +175,7 @@
 			<key>name</key>
 			<string>comment.block.flax</string>
 		</dict>
-		<key>boolean</key>
+		<key>boolean-literal</key>
 		<dict>
 			<key>match</key>
 			<string>\b(true|false|null)\b</string>
@@ -390,6 +386,7 @@
 			<key>patterns</key>
 			<array>
 				<dict><key>include</key> <string>#type</string></dict>
+				<dict><key>include</key> <string>#literal</string></dict>
 				<dict><key>include</key> <string>#operator</string></dict>
 				<dict><key>include</key> <string>#keyword</string></dict>
 				<dict><key>include</key> <string>#access-modifier</string></dict>
@@ -767,6 +764,10 @@
 					<key>include</key>
 					<string>#special-literal</string>
 				</dict>
+				<dict>
+					<key>include</key>
+					<string>#boolean-literal</string>
+				</dict>
 			</array>
 		</dict>
 		<key>logical-operator</key>
@@ -788,7 +789,7 @@
 		<key>directive</key>
 		<dict>
 			<key>match</key>
-			<string>#(run|if)</string>
+			<string>#(run|if|assert|string)</string>
 			<key>name</key>
 			<string>keyword.directive</string>
 		</dict>
