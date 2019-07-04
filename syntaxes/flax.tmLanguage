@@ -198,45 +198,6 @@
 				</dict>
 			</array>
 		</dict>
-		<key>code-block</key>
-		<dict>
-			<key>begin</key>
-			<string>(\{)</string>
-			<key>beginCaptures</key>
-			<dict>
-				<key>1</key>
-				<dict>
-					<key>name</key>
-					<string>punctuation.definition.code-block.begin.flax</string>
-				</dict>
-			</dict>
-			<key>comment</key>
-			<string>code-block</string>
-			<key>end</key>
-			<string>(\})</string>
-			<key>endCaptures</key>
-			<dict>
-				<key>1</key>
-				<dict>
-					<key>name</key>
-					<string>punctuation.definition.code-block.end.flax</string>
-				</dict>
-			</dict>
-			<key>patterns</key>
-			<array>
-				<dict>
-					<key>include</key>
-					<string>$self</string>
-				</dict>
-			</array>
-		</dict>
-		<key>inline-code-block</key>
-		<dict>
-			<key>match</key>
-			<string>\b=&gt;[^\n]+</string>
-			<key>name</key>
-			<string>punctuation.definition.code-block.flax</string>
-		</dict>
 		<key>comment</key>
 		<dict>
 			<key>comment</key>
@@ -419,20 +380,21 @@
 				<dict><key>include</key> <string>#access-modifier</string></dict>
 			</array>
 			<key>end</key>
-			<string>(\n|\{)</string>
+			<string>(\n)</string>
 			<key>name</key>
 			<string>meta.foreign-function-declaration.flax</string>
 		</dict>
 		<key>misc-keyword-symbols</key>
 		<dict>
 			<key>match</key>
-			<string>(-&gt;|=&gt;)|(:{1,2}|\.)|([\(\)\[\]])|(;)</string>
+			<string>(-&gt;|=&gt;)|(:{1,2}|\.)|([\(\)\[\]])|(;)|(\{|\})</string>
 			<key>captures</key>
 			<dict>
 				<key>1</key>    <dict><key>name</key> <string>punctuation.definition.keyword.arrow.flax</string> </dict>
 				<key>2</key>    <dict><key>name</key> <string>punctuation.separator.flax</string> </dict>
 				<key>3</key>    <dict><key>name</key> <string>punctuation.separator.parens.flax</string> </dict>
 				<key>4</key>    <dict><key>name</key> <string>punctuation.separator.terminator.flax</string> </dict>
+				<key>5</key>    <dict><key>name</key> <string>punctuation.definition.block.flax</string> </dict>
 			</dict>
 			<key>name</key>
 			<string>punctuation</string>
